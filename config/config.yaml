@@ -1,0 +1,14 @@
+game:
+  name: "Slay the Spire"
+  # 본인의 스팀 설치 경로로 반드시 수정하세요!
+  # Windows 예시:
+  steam_path: "C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire"
+  # Mac 예시:
+  # steam_path: "~/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources"
+  
+  java_cmd: "java" # 시스템에 설치된 java 명령어
+
+agent:
+  name: "SpireAgent_v0.1"
+  mode: "dev" # dev / train / play
+  logging: true

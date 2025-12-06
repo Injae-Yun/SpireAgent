@@ -1,0 +1,12 @@
+name: spire_agent
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - pyyaml
+    - tqdm
+    - numpy
+    - pandas
+    # 추후 torch 등 추가 예정
