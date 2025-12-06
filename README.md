@@ -1,4 +1,4 @@
-# SpireAgent: RL-based Slay the Spire AI
+# SpireAgent: RL-based + AI Slay the Spire
 
 ## 🛠 Prerequisites
 
