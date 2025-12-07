@@ -20,10 +20,13 @@ AI와 게임을 연결하기 위해 `CommunicationMod` 설정이 필요합니다
 1. `SlayTheSpire` 설치 폴더로 이동.
 2. `mts-launcher.jar` (또는 ModTheSpire) 실행.
 3. 모드 목록에서 `CommunicationMod` 체크.
-4. **(중요)** `CommunicationMod`의 설정(Config)을 열거나, 게임 폴더 내 생성된 `communication_mod_config.properties` 파일을 엽니다.
+4. **(중요)** `CommunicationMod`의 설정(Config)을 열거나, 
+# AppData\Local\ModTheSpire\CommunicationMod\config
+게임 폴더 내 생성된 `communication_mod_config.properties` 파일을 엽니다.
 5. `command` 항목을 우리의 Python 에이전트로 지정해야 합니다.
    - 예: `command=C:\Users\User\anaconda3\envs\spire_agent\python.exe C:\Projects\SpireAgent\agent.py`
    - **주의:** Conda 환경의 python 경로를 절대 경로로 적어주는 것이 확실합니다.
+6. **중요** sts 게임 내의 mod - CommunicationMod - config 설정에서 외부 프로그램 실행 옵션을 켭니다. 
 
 ## 🚀 How to Run
 게임을 실행하면(ModTheSpire 이용), 게임이 자동으로 위 `command`에 설정된 Python 스크립트를 자식 프로세스로 실행합니다.

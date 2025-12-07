@@ -1,14 +1,30 @@
 import os
+import sys
 import yaml
 import logging
 from connect.bridge import Bridge
 
 # 로깅 설정
-logging.basicConfig(filename='logs/agent.log', level=logging.DEBUG, 
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+# 1. 현재 스크립트(agent.py)의 절대 경로를 찾음
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# 2. logs 폴더와 config 폴더의 절대 경로 생성
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
+CONFIG_PATH = os.path.join(BASE_DIR, 'config', 'config.yaml')
+
+# 3. logs 폴더가 없으면 생성 (안전장치)
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+# 4. 로깅 설정 (절대 경로 사용)
+logging.basicConfig(
+    filename=os.path.join(LOG_DIR, 'agent.log'), 
+    level=logging.DEBUG, 
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 def load_config():
-    with open('config/config.yaml', 'r') as f:
+    with open(CONFIG_PATH, 'r') as f:
         return yaml.safe_load(f)
 
 def main():
